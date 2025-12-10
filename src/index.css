@@ -1,4 +1,20 @@
 @import "tailwindcss";
+@tailwind utilities;
+
+@layer utilities {
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 1.5 s;
+  }
+}
 
 * {
   box-sizing: border-box;
@@ -8,4 +24,18 @@
 #root {
   display: flex;
   min-height: 100vh;
+  animation: fadeIn 2 s;
+}
+
+.loader {
+  animation: loader 1s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes loader {
+  0% {
+    background-position: -800px 0px;
+  }
+  100% {
+    background-position: 800px 0px;
+  }
 }
