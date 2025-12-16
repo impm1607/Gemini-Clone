@@ -16,10 +16,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
   };
 
   return (
-    <div className="h-screen max-w-[220px] flex flex-col justify-between bg-[#f0f4f9] px-3 py-4">
+    <div className="h-screen max-w-[230px] flex flex-col justify-between bg-[#e4ebf4] px-3 py-4">
       <div className="flex flex-col gap-8">
         <button
-          className="w-8 h-8 flex justify-center items-center p-1.5 hover:bg-gray-300 rounded-md cursor-pointer"
+          className="w-8 h-8 flex justify-center items-center p-1.5  hover:bg-gray-400/50 rounded-md cursor-pointer"
           onClick={() => setSidebarOpen(!sidebarOpen)}
         >
           {sidebarOpen ? (
@@ -29,11 +29,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
           )}
         </button>
         <button
-          className="h-10 flex justify-center items-center gap-2 p-1.5 bg-[#dce1e9] hover:bg-gray-400/50 shadow-2xl rounded-md cursor-pointer"
+          className="h-10 flex justify-center items-center gap-1.5 p-1.5 bg-[#ecf2fc] hover:bg-gray-400/50 shadow-2xl rounded-md cursor-pointer"
           onClick={() => newChat()}
         >
-          <FaPlus />
-          {sidebarOpen && <p>New Chat</p>}
+          <FaPlus className="w-4 h-4" />
+          {sidebarOpen && <p className="text-nowrap text-sm">New Chat</p>}
         </button>
         {sidebarOpen && (
           <div className="flex flex-col gap-2">
@@ -42,7 +42,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
               {prevPrompts.map((item, index) => {
                 return (
                   <div
-                    className="h-8 flex justify-start items-center gap-1 p-1.5 bg-[#e2e6eb]/50 hover:bg-gray-300 rounded-md cursor-pointer animate-fadeIn"
+                    className="h-8 flex justify-start items-center gap-1 p-1.5 hover:bg-gray-400/50 rounded-md cursor-pointer animate-fadeIn"
                     onClick={() => loadPrompt(item)}
                   >
                     <FiMessageSquare className="h-3 w-3 shrink-0 " />
@@ -55,15 +55,15 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
         )}
       </div>
       <div className="flex flex-col gap-2 pb-2">
-        <div className="h-8 flex justify-start items-center gap-1.5 p-1.5 hover:bg-gray-300 rounded-md cursor-pointer">
+        <div className="h-8 flex justify-start items-center gap-1.5 p-1.5  hover:bg-gray-400/50 rounded-md cursor-pointer">
           <RiQuestionLine className="w-5 h-5" />
           {sidebarOpen && <p className="text-sm">Help</p>}
         </div>
-        <div className="h-8 flex justify-start items-center gap-1.5 p-1.5 hover:bg-gray-300 rounded-md cursor-pointer">
+        <div className="h-8 flex justify-start items-center gap-1.5 p-1.5  hover:bg-gray-400/50 rounded-md cursor-pointer">
           <MdOutlineHistory className="w-5 h-5" />
           {sidebarOpen && <p className="text-sm">Activity</p>}
         </div>
-        <div className="h-8 flex justify-start items-center gap-1.5 p-1.5 hover:bg-gray-300 rounded-md cursor-pointer">
+        <div className="h-8 flex justify-start items-center gap-1.5 p-1.5  hover:bg-gray-400/50 rounded-md cursor-pointer">
           <MdOutlineSettings className="w-5 h-5" />
           {sidebarOpen && <p className="text-sm">Settings</p>}
         </div>
