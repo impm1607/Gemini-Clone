@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
+import { SidebarTrigger } from "./ui/sidebar";
+import { VscLayoutSidebarLeftOff } from "react-icons/vsc";
 import { CgProfile, CgOptions } from "react-icons/cg";
 import { FiMic } from "react-icons/fi";
 import { LuImagePlus, LuSendHorizontal } from "react-icons/lu";
 import { RiGeminiFill } from "react-icons/ri";
 import { BsStars } from "react-icons/bs";
 import { Context } from "../context/Context";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Workspace = () => {
   const {
@@ -17,11 +20,18 @@ const Workspace = () => {
     input,
   } = useContext(Context);
 
+  const isMobile = useIsMobile();
+
   return (
     <div className="relative flex flex-col w-full h-screen p-2 overflow-x-hidden overflow-y-auto bg-[#f0f4f9]">
       {/* NAV BAR */}
       <div className="absolute top-2 left-0 right-0 w-full flex justify-between items-center gap-2 px-3">
-        <p className="text-xl">Gemini</p>
+        {isMobile && (
+          <SidebarTrigger className="w-9 h-9 flex items-center justify-center rounded-md hover:bg-gray-300">
+            <VscLayoutSidebarLeftOff className="w-5 h-5" />
+          </SidebarTrigger>
+        )}
+        <p className="text-xl">Jemini</p>
         <CgProfile className="w-12 h-12" />
       </div>
 
@@ -41,13 +51,12 @@ const Workspace = () => {
             </div>
           </>
         ) : (
-          <div className="max-h-[70vh] w-full flex-1 flex flex-col gap-5 overflow-y-scroll overflow-x-hidden scrollbar-none py-4">
-            <div className="flex flex-row-reverse gap-5">
-              <CgProfile className="w-8 h-8 rounded-full shrink-0" />
-              <span className="flex flex-row-reverse items-center justify-center bg-gray-300 px-4 py-1 rounded-2xl wrap-break-word">
-                <p className="wrap-break-word text-sm">{recentPrompt}</p>
-              </span>
-            </div>
+          <div className="max-h-[70vh] w-full flex-1 flex flex-col gap-5 overflow-y-scroll overflow-x-hidden py-4">
+            <span className="flex items-center justify-end">
+              <p className="wrap-break-word text-sm bg-gray-300 px-4 py-2 rounded-2xl ">
+                {recentPrompt}
+              </p>
+            </span>
             <div className="flex justify-start items-center gap-5 my-2">
               {loading ? (
                 <div className="relative flex justify-center items-center w-8 h-8">
