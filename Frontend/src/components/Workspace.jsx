@@ -26,11 +26,11 @@ const Workspace = () => {
       </div>
 
       {/* CONTENT */}
-      <div className="max-w-[900px] mx-auto my-5 w-full flex-1 flex flex-col justify-center items-center px-5">
+      <div className="max-w-225 mx-auto my-5 w-full flex-1 flex flex-col justify-center items-center px-5">
         {!showResult ? (
           <>
             {/* INTRO */}
-            <div className="max-w-[700px] w-full text-[#c4c7c5] font-medium p-5 flex justify-start items-center gap-3">
+            <div className="max-w-175 w-full text-[#c4c7c5] font-medium p-5 flex justify-start items-center gap-3">
               <BsStars className="w-14 h-14 text-[#4b90ff]" />
               <div className="flex flex-col">
                 <span className="text-5xl bg-[linear-gradient(16deg,#4b90ff,#ff5546)] bg-clip-text text-transparent">
@@ -68,7 +68,7 @@ const Workspace = () => {
         )}
 
         {/* PROMPT BAR */}
-        <div className="max-w-[700px] w-full flex flex-col gap-5 shadow-2xl bg-white rounded-2xl my-2 p-4">
+        <div className="max-w-175 w-full flex flex-col gap-5 shadow-2xl bg-white rounded-2xl my-2 p-4">
           <div className="w-full flex">
             <input
               type="text"
@@ -124,11 +124,13 @@ export default Workspace;
 //           </div>
 //         </div>
 
-<div className="max-w-[1000px] mx-auto absolute bottom-0 left-1/2 -translate-x-1/2 w-full py-5 px-4">
+{
+  /* <div className="max-w-250 mx-auto absolute bottom-0 left-1/2 -translate-x-1/2 w-full py-5 px-4">
   <div className="flex justify-between items-center gap-4 bg-[#f0f4f9] px-6 py-2 rounded-full">
     <div className="flex justify-center items-center gap-4"></div>
   </div>
   <div className="text-[10px] mt-4 w-full text-center">
     Gemini can make mistakes, so double-check it.
   </div>
-</div>;
+</div>; */
+}
