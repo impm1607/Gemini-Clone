@@ -103,34 +103,3 @@ const Workspace = () => {
 };
 
 export default Workspace;
-
-//  {/* CARDS */}
-//         <div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(160px,1fr))] p-5 my-5 max-h-[200px]">
-//           <div className="h-full flex flex-col justify-between items-start p-3 gap-3 bg-[#f0f4f9] hover:bg-[#dfe4ea] text-[#585858] rounded-xl cursor-pointer">
-//             <p>Suggest beautiful places to see on an upcoming road trip</p>
-//             <FaRegCompass className="w-7 h-7 bg-white rounded-full p-1" />
-//           </div>
-//           <div className="h-full flex flex-col justify-between items-start p-3 gap-3 bg-[#f0f4f9] hover:bg-[#dfe4ea] text-[#585858] rounded-xl cursor-pointer">
-//             <p>Briefly summarize this concept: urban planning</p>
-//             <FaLightbulb className="w-7 h-7 bg-white rounded-full p-1" />
-//           </div>
-//           <div className="h-full flex flex-col justify-between items-start p-3 gap-3 bg-[#f0f4f9] hover:bg-[#dfe4ea] text-[#585858] rounded-xl cursor-pointer">
-//             <p>Improve the readability of the following codek</p>
-//             <FaCode className="w-7 h-7 bg-white rounded-full p-1" />
-//           </div>
-//           <div className="h-full flex flex-col justify-between items-start p-3 gap-3 bg-[#f0f4f9] hover:bg-[#dfe4ea] text-[#585858] rounded-xl cursor-pointer">
-//             <p>Brainstorm team bonding activities for our work retreat</p>
-//             <TiMessages className="w-7 h-7 bg-white rounded-full p-1" />
-//           </div>
-//         </div>
-
-{
-  /* <div className="max-w-250 mx-auto absolute bottom-0 left-1/2 -translate-x-1/2 w-full py-5 px-4">
-  <div className="flex justify-between items-center gap-4 bg-[#f0f4f9] px-6 py-2 rounded-full">
-    <div className="flex justify-center items-center gap-4"></div>
-  </div>
-  <div className="text-[10px] mt-4 w-full text-center">
-    Gemini can make mistakes, so double-check it.
-  </div>
-</div>; */
-}

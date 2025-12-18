@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
-  Sidebar as ShadcnSidebar,
+  Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
@@ -18,7 +18,7 @@ import { MdOutlineHistory, MdOutlineSettings } from "react-icons/md";
 import { RiQuestionLine } from "react-icons/ri";
 import { Context } from "../context/Context";
 
-const Sidebar = () => {
+const AppSidebar = () => {
   const { onSent, prevPrompts, setRecentPrompt, newChat } = useContext(Context);
   const { state } = useSidebar();
   const isCollapsed = state === "collapsed";
@@ -29,29 +29,26 @@ const Sidebar = () => {
   };
 
   return (
-    <ShadcnSidebar collapsible="icon" variant="inset" className="bg-[#e4ebf4]">
+    <Sidebar collapsible="icon" variant="inset" className="bg-[#e4ebf4]">
       {/* Header */}
       <SidebarHeader className="flex items-start gap-8 bg-[#e4ebf4]">
-        <SidebarTrigger asChild>
+        <SidebarTrigger>
           <Button
             variant="outline"
-            size="icon"
             className="w-8 h-8 flex justify-center items-center p-1.5 rounded-md shrink-0"
           >
             <VscLayoutSidebarLeft className="w-full h-full" />
           </Button>
         </SidebarTrigger>
 
-        {!isCollapsed && (
-          <Button
-            variant="outline"
-            className="h-10 w-full gap-2.5 p-1.5 hover:bg-gray-400/60"
-            onClick={() => newChat()}
-          >
-            <FaPlus className="h-4 w-4" />
-            <p className="text-nowrap text-sm"> New Chat</p>
-          </Button>
-        )}
+        <Button
+          variant="outline"
+          className="h-10 w-full gap-2.5 p-1.5 hover:bg-gray-400/60"
+          onClick={() => newChat()}
+        >
+          <FaPlus className="h-4 w-4" />
+          {!isCollapsed && <p className="text-nowrap text-sm"> New Chat</p>}
+        </Button>
       </SidebarHeader>
 
       {/* Main content */}
@@ -97,27 +94,8 @@ const Sidebar = () => {
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarFooter>
-    </ShadcnSidebar>
+    </Sidebar>
   );
 };
 
-export default Sidebar;
-
-// <div className="h-screen flex flex-col justify-between ">
-//
-//
-//     <div className="flex flex-col gap-2 pb-2">
-//       <div className="h-8 flex justify-start items-center gap-1.5 p-1.5  hover:bg-gray-400/60 rounded-md cursor-pointer">
-//         <RiQuestionLine className="w-5 h-5" />
-//         {sidebarOpen && <p className="text-sm">Help</p>}
-//       </div>
-//       <div className="h-8 flex justify-start items-center gap-1.5 p-1.5  hover:bg-gray-400/60 rounded-md cursor-pointer">
-//         <MdOutlineHistory className="w-5 h-5" />
-//         {sidebarOpen && <p className="text-sm">Activity</p>}
-//       </div>
-//       <div className="h-8 flex justify-start items-center gap-1.5 p-1.5  hover:bg-gray-400/60 rounded-md cursor-pointer">
-//         <MdOutlineSettings className="w-5 h-5" />
-//         {sidebarOpen && <p className="text-sm">Settings</p>}
-//       </div>
-//     </div>
-//   </div>
+export default AppSidebar;
